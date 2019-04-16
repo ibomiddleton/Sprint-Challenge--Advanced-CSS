@@ -1,1 +1,29 @@
 // Mixins Here
+
+@btn-height: 50px;
+.btn-parametric(@color: white, @btn-bg-color: @btn-bg-color, @height: @btn-height) {
+    padding: 5px;
+    width: 70px;
+    color: @color;
+    background-color: @btn-bg-color;
+    border-radius: 5px;
+}
+.walk-text {
+    .btn {
+        .btn-parametric;
+        cursor: pointer;
+    }
+}
+.btn:hover {
+    background-color: silver;
+    color: black;
+}
+@media @mobile {
+    .walk-text {
+        .btn {
+            width: 100%;
+            padding: 25px;
+            font-size: 20px;
+        }
+    }
+}
